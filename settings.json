@@ -1,0 +1,20 @@
+{
+  // 1. VS Code 내장 PHP 유효성 검사 비활성화 (Intelephense에 위임)
+  "php.suggest.basic": false,
+  "php.validate.enable": false,
+
+  // 2. 블레이드 파일 전용 서식 도구 지정
+  "[blade]": {
+    "editor.defaultFormatter": "shufo.vscode-blade-formatter",
+    "editor.formatOnSave": true
+  },
+
+  // 3. PHP 파일 저장 시 자동 정렬
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+    "editor.formatOnSave": true
+  },
+
+  // 4. 터미널 기본 쉘을 Git Bash 또는 PowerShell로 설정 (선택 사항)
+  "terminal.integrated.defaultProfile.windows": "PowerShell"
+}
