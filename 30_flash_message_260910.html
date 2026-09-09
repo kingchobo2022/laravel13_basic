@@ -1,39 +1,16 @@
-<!-- 성공 (Success) -->
-<div class="flex items-center p-4 mb-4 text-sm text-emerald-800 rounded-lg bg-emerald-50 border border-emerald-200" role="alert">
-  <svg class="w-5 h-5 mr-3 shrink-0 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-  </svg>
-  <div>
-    <span class="font-medium">성공!</span> 변경 사항이 정상적으로 저장되었습니다.
+<div class="flex items-start gap-4 p-4 rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-900 shadow-sm">
+  <!-- 아이콘 -->
+  <div class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+    </svg>
   </div>
-</div>
 
-<!-- 오류 (Error / Danger) -->
-<div class="flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 border border-red-200" role="alert">
-  <svg class="w-5 h-5 mr-3 shrink-0 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-  </svg>
-  <div>
-    <span class="font-medium">오류 발생!</span> 필수 입력 항목을 다시 확인해 주세요.
+  <!-- 내용 -->
+  <div class="flex-1 text-sm">
+    <h4 class="font-semibold text-emerald-950">처리가 완료되었습니다</h4>
+    <p class="mt-1 text-emerald-700 leading-relaxed">
+      {{ session('success') }}
+    </p>
   </div>
-</div>
-
-<!-- 정보 (Info) -->
-<div class="flex items-center p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 border border-blue-200" role="alert">
-  <svg class="w-5 h-5 mr-3 shrink-0 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-  </svg>
-  <div>
-    <span class="font-medium">알림:</span> 오늘 밤 12시부터 시스템 점검이 예정되어 있습니다.
-  </div>
-</div>
-
-<!-- 경고 (Warning) -->
-<div class="flex items-center p-4 mb-4 text-sm text-amber-800 rounded-lg bg-amber-50 border border-amber-200" role="alert">
-  <svg class="w-5 h-5 mr-3 shrink-0 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-  </svg>
-  <div>
-    <span class="font-medium">주의:</span> 탈퇴 시 저장된 모든 게시글이 삭제됩니다.
-  </div>
-</div>
+</div>        
