@@ -1,13 +1,22 @@
-<header style="background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 15px 30px;">
-    <div style="max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-        <a href="{{ route('posts.index') }}" style="font-weight: bold; font-size: 18px; text-decoration: none; color: #0f172a;">
-            내 첫 번째 라라벨 게시판
-        </a>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ $title ?? '나의 라라벨 사이트' }}</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body>
 
-        <nav style="display: flex; align-items: center; gap: 15px;">
-            <a href="{{ route('posts.index') }}" style="text-decoration: none; color: #475569;">게시판</a>
+    <header>
+        <h2>My Laravel App (Component Base)</h2>
+        <nav>
+            <a href="/">홈</a>
+            <a href="/posts">게시판</a>
+            <a href="/about">소개</a>
 
-            <!-- [로그인 상태일 때] -->
+<!-- [로그인 상태일 때] -->
             @auth
                 <span style="font-size: 14px; color: #334155;">
                     <strong>{{ auth()->user()->name }}</strong>님
@@ -24,9 +33,15 @@
 
             <!-- [비로그인(게스트) 상태일 때] -->
             @guest
-                <a href="{{ route('login') }}" style="text-decoration: none; color: #2563eb; font-size: 14px;">로그인</a>
+                <a href="{{ route('login') }}" class="btn" style="text-decoration: none; color: #fff; font-size: 14px;">로그인</a>
                 <a href="{{ route('register') }}" class="btn" style="padding: 6px 12px; font-size: 13px;">회원가입</a>
-            @endguest
+            @endguest            
+            
         </nav>
-    </div>
-</header>
+    </header>
+    
+    <main>
+        {{ $slot }}
+    </main>
+</body>
+</html>
